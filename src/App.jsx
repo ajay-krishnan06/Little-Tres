@@ -5,6 +5,8 @@ import {
   Trophy, PartyPopper, ChevronRight, PlayCircle, Send
 } from 'lucide-react';
 
+import logo from './assets/as1.png';
+
 export default function LittleTreasuresWebsite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -72,15 +74,14 @@ export default function LittleTreasuresWebsite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16 sm:h-20">
 
-            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#FFC837] flex items-center justify-center shadow-md shrink-0">
-                <Sprout className="w-4 h-4 sm:w-6 sm:h-6 text-[#1B2A4A]" />
-              </div>
-              <div className="min-w-0">
-                <p className="text-sm sm:text-lg font-extrabold leading-tight text-[#1B2A4A] truncate">Little Treasures</p>
-                <p className="text-[9px] sm:text-xs font-semibold text-[#FF6B6B] tracking-wide uppercase truncate">Day Care & Play School</p>
-              </div>
-            </div>
+            {/* Rectangular logo: fixed height, width adjusts automatically */}
+            <a href="#about" className="flex items-center min-w-0 shrink-0" aria-label="Little Treasures home">
+              <img
+                src={logo}
+                alt="Little Treasures Day Care & Play School logo"
+                className="h-10 sm:h-14 w-auto max-w-[200px] sm:max-w-[260px] object-contain"
+              />
+            </a>
 
             <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
               {navLinks.map((link) => (
@@ -164,8 +165,8 @@ export default function LittleTreasuresWebsite() {
                 >
                   Enquire Now <ChevronRight className="w-4 h-4" />
                 </a>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="inline-flex items-center justify-center gap-2 bg-white text-[#1B2A4A] px-6 py-3.5 rounded-full font-bold shadow-md hover:bg-[#FFC837]/20 transition-colors border border-gray-200 text-sm sm:text-base"
                 >
                   <PlayCircle className="w-5 h-5 text-[#FF6B6B]" /> Virtual Tour
@@ -188,8 +189,13 @@ export default function LittleTreasuresWebsite() {
             <div className="relative order-1 lg:order-2 max-w-sm sm:max-w-md mx-auto lg:max-w-none w-full">
               <div className="bg-gradient-to-br from-[#FFC837] via-[#FF6B6B] to-[#4ECDC4] rounded-[1.75rem] sm:rounded-[2.5rem] p-1.5 sm:p-2 shadow-xl">
                 <div className="bg-white rounded-[1.5rem] sm:rounded-[2rem] aspect-square flex items-center justify-center p-6 sm:p-8 text-center">
-                  <div>
-                    <Sprout className="w-14 h-14 sm:w-20 sm:h-20 text-[#4ECDC4] mx-auto mb-3 sm:mb-4" />
+                  <div className="w-full">
+                    {/* Large rectangular logo in the hero card */}
+                    <img
+                      src={logo}
+                      alt="Little Treasures Day Care & Play School logo"
+                      className="w-full max-w-[280px] sm:max-w-[340px] h-auto object-contain mx-auto mb-4 sm:mb-6"
+                    />
                     <p className="text-[#1B2A4A] font-bold text-sm sm:text-lg mb-1">
                       Little Treasures Play & Learning Environment
                     </p>
@@ -354,11 +360,13 @@ export default function LittleTreasuresWebsite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-10 sm:mb-12">
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-[#FFC837] flex items-center justify-center shrink-0">
-                  <Sprout className="w-4 h-4 text-[#1B2A4A]" />
-                </div>
-                <p className="font-extrabold text-sm sm:text-base">Little Treasures</p>
+              {/* Rectangular logo on a white plate so it stays readable on the dark footer */}
+              <div className="inline-block bg-white rounded-xl p-2 mb-3">
+                <img
+                  src={logo}
+                  alt="Little Treasures Day Care & Play School logo"
+                  className="h-10 sm:h-12 w-auto max-w-[200px] object-contain"
+                />
               </div>
               <p className="text-xs text-white/60 leading-relaxed">
                 Practical & activity-based early childhood education in Ramapuram, Chennai.
